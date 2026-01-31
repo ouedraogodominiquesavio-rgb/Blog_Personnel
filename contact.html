@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Expert Web & Hardware</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">Dev<span>Hardware</span></div>
+        <ul class="nav-links">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="formation.html">Formations</a></li>
+            <li><a href="boutique.html">Boutique</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="contact-container">
+        <div class="contact-box">
+            <div class="contact-info">
+                <h2>Parlons de votre projet</h2>
+                <p>Que ce soit pour une formation personnalisée ou un achat de matériel, je vous répondrai sous 24h.</p>
+
+                <div class="contact-details">
+                    <p>📍 Ouagadougou, Burkina Faso</p>
+                    <p>📧 jig16586@gmail.com</p>
+                    <p>📞 +226 64 14 45 41</p>
+                </div>
+            </div>
+
+            <div class="contact-form-wrapper">
+                <form action="https://formspree.io/f/mbdyqerl" method="POST">
+
+                    <div class="input-group">
+                        <label>Nom Complet</label>
+                        <input type="text" name="nom_complet" placeholder="Votre nom et prénom" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Email</label>
+                        <input type="email" name="_replyto" placeholder="votre@gmail.com" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Sujet</label>
+                        <select name="sujet" required>
+                            <option value="Demande de Formation">Demande de Formation</option>
+                            <option value="Achat de Matériel">Achat de Matériel (Boutique)</option>
+                            <option value="Autre demande">Autre demande</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Message</label>
+                        <textarea name="message" rows="4" placeholder="Comment puis-je vous aider ?" required></textarea>
+                    </div>
+
+                    <input type="hidden" name="_subject" value="Nouveau contact depuis votre site Web">
+
+                    <button type="submit" class="btn-primary full-width">Envoyer le Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 | Développeur Formateur & Vendeur Hardware</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

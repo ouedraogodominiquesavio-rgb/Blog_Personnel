@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription | Formation Web</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">Dev<span>Hardware</span></div>
+        <ul class="nav-links">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="formation.html">Formations</a></li>
+            <li><a href="boutique.html">Boutique</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="registration-section">
+        <div class="form-card">
+            <h2>Finalisez votre inscription</h2>
+            <p>Remplissez vos informations pour accéder à la formation.</p>
+
+
+
+            <form id="formInscription" action="https://formspree.io/f/mbdyqerl" method="POST">
+                <div class="input-row">
+                    <div class="input-group">
+                        <label>Nom</label>
+                        <input type="text" name="nom" placeholder="Ex: Traoré" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Prénom</label>
+                        <input type="text" name="prenom" placeholder="Ex: Moussa" required>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>Votre Profession</label>
+                    <select name="profession" required>
+                        <option value="">-- Sélectionnez --</option>
+                        <option value="Etudiant">Étudiant</option>
+                        <option value="Salarie">Salarié</option>
+                        <option value="Vendeur">Vendeur</option>
+                        <option value="Freelance">Freelance / Indépendant</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label>Type de Formation</label>
+                    <select name="formation" required>
+                        <option value="html_css">HTML5 & CSS3 (25.000 CFA)</option>
+                        <option value="javascript">JavaScript Avancé (40.000 CFA)</option>
+                        <option value="pack_complet">Pack Complet (60.000 CFA)</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label>Email (Gmail)</label>
+                    <input type="email" name="email" placeholder="votre@gmail.com" required>
+                </div>
+
+                <div class="input-group">
+                    <label>Téléphone</label>
+                    <input type="tel" name="telephone" placeholder="Ex: +226 00 00 00 00" required>
+                </div>
+
+                <button type="button" class="btn-submit" onclick="ouvrirModalOTP()">Valider l'inscription</button>
+            </form>
+        </div>
+    </section>
+
+    <div id="otpModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="fermerModalOTP()">&times;</span>
+            <h3>🔐 Validation OTP</h3>
+            <p>Un code de sécurité a été envoyé au numéro indiqué. Veuillez le saisir pour valider le paiement.</p>
+            <input type="text" id="otpInput" placeholder="Entrez le code à 6 chiffres" maxlength="6">
+            <button class="btn-primary" onclick="confirmerPaiement()">Confirmer le Paiement</button>
+            <p class="timer">Le code expire dans <span id="time">02:00</span></p>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+    <script src="js/payment.js"></script>
+</body>
+
+</html>
