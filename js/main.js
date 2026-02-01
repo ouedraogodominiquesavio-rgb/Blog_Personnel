@@ -5,14 +5,11 @@
 document.addEventListener('DOMContentLoaded', () => {
     console.log("Site chargé avec succès !");
 
-    // 1. GESTION DE LA NAVIGATION ACTIVE
-    const currentPath = window.location.pathname;
-    const navLinks = document.querySelectorAll('.nav-links a');
-    navLinks.forEach(link => {
-        if (link.getAttribute('href') === currentPath.split('/').pop()) {
-            link.classList.add('active');
-        }
-    });
+    // 1. GESTION DE LA NAVIGATION ACTIVE (Écouteur pour le bouton si non défini en HTML)
+    const menuBtn = document.getElementById("mobile-menu");
+    if (menuBtn) {
+        menuBtn.addEventListener('click', toggleMenu);
+    }
 
     // 2. LOGIQUE DE LA PAGE INSCRIPTION & OTP
     const btnInscription = document.querySelector('.btn-submit');
@@ -21,16 +18,30 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+// --- FONCTION POUR LE MENU BURGER ---
+
+function toggleMenu() {
+    // Correction de l'espace : var navList au lieu de varnavList
+    var navList = document.getElementById("nav-list");
+    if (navList) {
+        if (navList.classList.contains("active")) {
+            navList.classList.remove("active");
+        } else {
+            navList.classList.add("active");
+        }
+    }
+}
+
 // --- FONCTIONS POUR L'INSCRIPTION ---
 
 function ouvrirModalOTP() {
     const form = document.getElementById('formInscription');
 
     // Vérification si le formulaire est bien rempli
-    if (form.checkValidity()) {
+    if (form && form.checkValidity()) {
         document.getElementById('otpModal').style.display = 'flex';
         demarrerTimer(120); // Timer de 2 minutes
-    } else {
+    } else if (form) {
         alert("Attention : Veuillez remplir tous les champs (Nom, Profession, Tel, etc.) avant de valider.");
         form.reportValidity();
     }
@@ -87,36 +98,38 @@ function ajouterAuPanier(nomProduit) {
 
 // --- LOGIQUE POUR LE CONTACT ---
 
-// Si on vient de la boutique, on remplit automatiquement le sujet
-// Initialisation avec votre Public Key
+// Initialisation avec votre Public Key (EmailJS)
 (function() {
-    emailjs.init("mVTlf-_tAIUopX8Do");
+    if (typeof emailjs !== 'undefined') {
+        emailjs.init("mVTlf-_tAIUopX8Do");
+    }
 })();
 
-const btn = document.getElementById('btn-envoyer');
-const form = document.getElementById('contact-form');
+const contactForm = document.getElementById('contact-form');
+if (contactForm) {
+    contactForm.addEventListener('submit', function(event) {
+        event.preventDefault();
 
-form.addEventListener('submit', function(event) {
-    event.preventDefault();
+        const btn = document.getElementById('btn-envoyer');
+        btn.innerText = 'Envoi en cours...';
+        btn.disabled = true;
 
-    btn.innerText = 'Envoi en cours...';
-    btn.disabled = true;
+        // Vos IDs EmailJS
+        const serviceID = 'service_fupbf09';
+        const templateID = 'template_zd39iu4';
 
-    // Vos IDs EmailJS
-    const serviceID = 'service_fupbf09';
-    const templateID = 'template_zd39iu4';
-
-    // Envoi du formulaire
-    emailjs.sendForm(serviceID, templateID, this)
-        .then(() => {
-            btn.innerText = 'Envoyer le Message';
-            btn.disabled = false;
-            alert('✅ Succès ! Votre message a été envoyé.');
-            form.reset();
-        }, (err) => {
-            btn.innerText = 'Réessayer';
-            btn.disabled = false;
-            alert("❌ Erreur lors de l'envoi. Vérifiez votre connexion.");
-            console.log('Détails erreur:', err);
-        });
-});
+        // Envoi du formulaire
+        emailjs.sendForm(serviceID, templateID, this)
+            .then(() => {
+                btn.innerText = 'Envoyer le Message';
+                btn.disabled = false;
+                alert('✅ Succès ! Votre message a été envoyé.');
+                contactForm.reset();
+            }, (err) => {
+                btn.innerText = 'Réessayer';
+                btn.disabled = false;
+                alert("❌ Erreur lors de l'envoi. Vérifiez votre connexion.");
+                console.log('Détails erreur:', err);
+            });
+    });
+}

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | Expert Web & Hardware</title>
+    <title>Contact | Expert Web & Genis en Conception</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -12,8 +12,13 @@
 <body>
 
     <nav class="navbar">
-        <div class="logo">Dev<span>Hardware</span></div>
-        <ul class="nav-links">
+        <div class="logo">Dom<span>Service</span></div>
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <ul class="nav-links" id="nav-list">
             <li><a href="index.html">Accueil</a></li>
             <li><a href="formation.html">Formations</a></li>
             <li><a href="boutique.html">Boutique</a></li>
@@ -69,8 +74,45 @@
         </div>
     </section>
 
-    <footer>
-        <p>&copy; 2026 | Développeur Formateur & Vendeur Hardware</p>
+    <footer class="uts-footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <img src="img/logo-white.png" alt="Logo" class="footer-logo">
+                <p class="contact-text">(+226) 64 14 45 41</p>
+                <p class="contact-text">jig16586@gmail.com</p>
+                <div class="social-icons">
+                    <span class="icon">f</span> <span class="icon">t</span> <span class="icon">g+</span> <span class="icon">p</span>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>LIENS UTILES</h4>
+                <ul>
+                    <li><a href="https://openclassrooms.com">OPENCLASSROOMS</a></li>
+                    <li><a href="https://www.netacad.com">CISCO NETACAD</a></li>
+                    <li><a href="https://www.freecodecamp.org">FREECODECAMP</a></li>
+                    <li><a href="#">CAMPUSFASO</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>FORMATIONS INFO</h4>
+                <ul>
+                    <li><a href="#">DÉVELOPPEMENT WEB</a></li>
+                    <li><a href="#">MAINTENANCE</a></li>
+                    <li><a href="#">RÉSEAUX & SÉCURITÉ</a></li>
+                    <li class="highlight"><a href="#">EXPERTISE CLOUD</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>LOCALISATION</h4>
+                <div class="map-container">
+                    <img src="img/map-placeholder.jpg" alt="Carte Ouagadougou">
+                    <p>Kadiogo, Burkina Faso</p>
+                </div>
+            </div>
+        </div>
     </footer>
 
     <script src="js/main.js"></script>
