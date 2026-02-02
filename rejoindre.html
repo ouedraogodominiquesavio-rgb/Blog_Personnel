@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Équipe des Formateurs</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">Dom<span>Blog</span></div>
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <ul class="nav-links" id="nav-list">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="a-propos.html" class="active">À Propos</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header class="page-header">
+        <h1>Notre Équipe de Formateurs</h1>
+        <p>Des experts à votre service pour une formation de qualité.</p>
+    </header>
+
+    <main class="about-section">
+        <table class="info-table">
+            <thead>
+                <tr>
+                    <th>Nom & Prénom</th>
+                    <th>Niveau / Expertise</th>
+                    <th>Spécialité</th>
+                    <th>Email</th>
+                    <th>Téléphone</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>TRAORÉ</strong> Moussa</td>
+                    <td>Expert / Senior</td>
+                    <td>Cybersécurité</td>
+                    <td>m.traore@ecole.bf</td>
+                    <td>+226 01 02 03 04</td>
+                </tr>
+                <tr>
+                    <td><strong>OUÉDRAOGO</strong> Awa</td>
+                    <td>Consultante Senior</td>
+                    <td>Gestion de Projet</td>
+                    <td>a.ouedraogo@ecole.bf</td>
+                    <td>+226 05 06 07 08</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <section class="registration-section">
+            <div class="form-card">
+                <h2>Rejoindre l'équipe</h2>
+                <p>Postulez pour devenir formateur au sein de notre établissement.</p>
+                <form id="formRejoindre" action="https://formspree.io/f/mbdyqerl" method="POST">
+                    <form action="#" method="post">
+                        <div class="input-row">
+                            <div class="input-group">
+                                <label for="nom">Nom</label>
+                                <input type="text" id="nom" name="nom" required>
+                            </div>
+                            <div class="input-group">
+                                <label for="prenom">Prénom</label>
+                                <input type="text" id="prenom" name="prenom" required>
+                            </div>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="niveau">Niveau d'expertise</label>
+                            <select id="niveau" name="niveau">
+                            <option value="junior">Formateur Junior</option>
+                            <option value="intermediaire">Formateur Intermédiaire</option>
+                            <option value="expert">Expert / Senior</option>
+                        </select>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="formation">Type de formation dispensée</label>
+                            <input type="text" id="formation" name="formation" placeholder="ex: Développement Web, Marketing, css..." required>
+                        </div>
+
+                        <div class="input-row">
+                            <div class="input-group">
+                                <label for="email">Email professionnel</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="input-group">
+                                <label for="tel">Téléphone</label>
+                                <input type="tel" id="tel" name="tel" required>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn-submit">Envoyer ma candidature</button>
+                    </form>
+            </div>
+        </section>
+    </main>
+    <footer class="uts-footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <img src="img/logo-white.png" alt="Logo" class="footer-logo">
+                <p class="contact-text">(+226) 64 14 45 41</p>
+                <p class="contact-text">jig16586@gmail.com</p>
+                <div class="social-icons">
+                    <span class="icon">f</span> <span class="icon">t</span> <span class="icon">g+</span> <span class="icon">p</span>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>LIENS UTILES</h4>
+                <ul>
+                    <li><a href="https://openclassrooms.com">OPENCLASSROOMS</a></li>
+                    <li><a href="https://www.netacad.com">CISCO NETACAD</a></li>
+                    <li><a href="https://www.freecodecamp.org">FREECODECAMP</a></li>
+                    <li><a href="#">CAMPUSFASO</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>FORMATIONS INFO</h4>
+                <ul>
+                    <li><a href="#">DÉVELOPPEMENT WEB</a></li>
+                    <li><a href="#">MAINTENANCE </a></li>
+                    <li><a href="#">RÉSEAUX & SÉCURITÉ</a></li>
+                    <li class="highlight"><a href="#">EXPERTISE CLOUD</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>LOCALISATION</h4>
+                <div class="map-container">
+                    <img src="img/map-placeholder.jpg" alt="Carte Ouagadougou">
+                    <p>Kadiogo, Burkina Faso</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
